@@ -1,15 +1,14 @@
 package com.example.sharedpreferenceapp
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 
 class SharedPreferenceManger(context: Context) {
-    private val preference: SharedPreferences = context.getSharedPreferences(
-        context.getString(R.string.app_name),
+    private val preference = context.getSharedPreferences(
+        context.packageName,
         AppCompatActivity.MODE_PRIVATE
     )
-    private val editor: SharedPreferences.Editor = preference.edit()
+    private val editor = preference.edit()
 
 
     private val keyName = "name"
